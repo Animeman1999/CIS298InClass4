@@ -159,6 +159,7 @@ public class CrimeListFragment extends Fragment {
         //that the data set might have changed. This will
         //automatically update any data changes for us.
         } else {
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
 
@@ -265,6 +266,11 @@ public class CrimeListFragment extends Fragment {
         public int getItemCount() {
             //Just return the size of the crime list.
             return mCrimes.size();
+        }
+
+        //Setter to set the list of crimes for this class.
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
         }
     }
 
