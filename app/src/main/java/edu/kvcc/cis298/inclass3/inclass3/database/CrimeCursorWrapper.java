@@ -27,6 +27,7 @@ public class CrimeCursorWrapper extends CursorWrapper {
         String title = getString(getColumnIndex(CrimeTable.Cols.TITLE));
         long date = getLong(getColumnIndex(CrimeTable.Cols.DATE));
         int isSolved = getInt(getColumnIndex(CrimeTable.Cols.SOLVED));
+        String suspect = getString(getColumnIndex(CrimeTable.Cols.SUSPECT));
 
         //Create a new Crime using the constuctor that we just added that takes
         //a single parameter which is the UUID.
@@ -35,6 +36,7 @@ public class CrimeCursorWrapper extends CursorWrapper {
         crime.setTitle(title);
         crime.setDate(new Date(date));
         crime.setSolved(isSolved != 0);
+        crime.setSuspect(suspect);
 
         //return the finished crime model
         return crime;
